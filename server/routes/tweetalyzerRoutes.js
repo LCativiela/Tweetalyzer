@@ -1,4 +1,8 @@
+const { Router } = require("express");
 const express = require("express");
+const {
+    getTweets
+} = require('../controller/tweetalyzerController')
  
 // tweetalyzerRoutes is an instance of the express router.
 // We use it to define our routes.
@@ -11,18 +15,11 @@ const dbo = require("../db/conn");
 // This help convert the id from string to ObjectId for the _id.
 const ObjectId = require("mongodb").ObjectId;
 
- 
-// This section will help you get a single record by id
-tweetalyzerRoutes.route("/info/:hashtag").get(function (req, res) {
- let db_connect = dbo.getDb();
- let myquery = { _id: ObjectId(req.params.hashtag) };
- db_connect
-   .collection("records")
-   .findOne(myquery, function (err, result) {
-     if (err) throw err;
-     res.json(result);
-   });
-});
+
+
+//ROUTES
+//Simple get last 100 tweets get
+tweetalyzerRoutes.get('/:hashtag', getTweets)
  
 
 module.exports = tweetalyzerRoutes;
