@@ -24,7 +24,12 @@ module.exports = {
     return _db;
   },
 
-  addSearch: function (query) {
-    
+  addSearch: function (data) {
+    let db_connect = dbo.getDb();
+    db_connect.collection("storage").insertOne(data, function (err, res) {
+      if (err) throw err;
+    });
   }
+
+ 
 };
