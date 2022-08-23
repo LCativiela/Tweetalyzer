@@ -8,9 +8,12 @@ var T = new Twit({
     strictSSL:            true,     // optional - requires SSL certificates to be valid.
 })
 
-//Available functions
+/**
+ * Public functions
+ */
 const twitApi = {}
 
+//Public method that fetches the last 100 tweets
 twitApi.fetchTweets = async (hashtag) => {
     console.log("Fetch #" + hashtag + " Tweets")
     let data = await fetchTweets(hashtag)
@@ -18,10 +21,14 @@ twitApi.fetchTweets = async (hashtag) => {
 
 }
 
-//Private functions
+/**
+ * Private functions
+ */
+
+//Fetch tweets from twitter
 async function fetchTweets(hashtag){
     let response = T.get('search/tweets', 
-        { q: '#'+ hashtag + ' since:2011-07-11', count: 100 })
+        { q: '#'+ hashtag , count: 100 })
     return (await response).data
 }
 

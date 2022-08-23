@@ -7,7 +7,9 @@ const ObjectId = require("mongodb").ObjectId;
 
 const controller = { }
 
-//Public methods
+/**
+ * Public functions
+ */
 controller.getTweets = async (req, res) => {
     try{
         //Get Twitter Data
@@ -30,7 +32,11 @@ controller.getTweets = async (req, res) => {
 
 
 
-//Private methods
+/**
+ * Private functions
+ */
+
+//Parse twitter request to our data structure
 function parseData(hashtag,raw){
     let data = {}
     //Fill object with main data
@@ -60,6 +66,7 @@ function parseData(hashtag,raw){
     return data
 }
 
+//Send parsed object to database
 function storeData(hashtag, data){
     let db_connect = dbo.getDb();
     db_connect.collection("records").insertOne(data, function (err, res) {

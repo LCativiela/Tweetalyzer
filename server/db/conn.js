@@ -20,10 +20,12 @@ module.exports = {
          });
   },
  
+  //Return DB object
   getDb: function () {
     return _db;
   },
 
+  //Add to storage the current object
   addSearch: function (data) {
     let db_connect = dbo.getDb();
     db_connect.collection("storage").insertOne(data, function (err, res) {
