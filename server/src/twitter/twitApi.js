@@ -28,7 +28,7 @@ twitApi.fetchTweets = async (hashtag) => {
 //Fetch tweets from twitter
 async function fetchTweets(hashtag){
     let response = T.get('search/tweets', 
-        { q: '#'+ hashtag , count: 100 })
+        { q: '#'+ hashtag , count: 100, tweet_mode: 'extended'})
     return (await response).data
 }
 

@@ -1,14 +1,14 @@
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 
 import Display from './components/display/Display'
-import Search  from "./components/search/Search";
+import Header from './components/header/Header'
 
 const Full = () => {
   const { hashtag } = useParams();
 
   return (
-    <div>
-      <Search search={hashtag}/>
+    <div className="app" style={{width: "100%"}} >
+      <Header search={hashtag}/>
       <Display search={hashtag}/>
     </div>
   );
@@ -19,15 +19,13 @@ const RouteSwitch = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Search />} />
+        <Route path="/" element={<Header />} />
         <Route path="/:hashtag" 
-            element={
-                <div>    
-                  <Full />              
-                </div>                
+            element={   
+                  <Full />            
             }
          />
-        <Route path="*" element={<Search />} />
+        <Route path="*" element={<Header />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,0 +1,42 @@
+@import '/src/variables';
+
+.header{
+    position:fixed;
+    width: 100%;
+    height: 7rem;
+
+    background-color: $color2;
+    background-image: url('/resources/header3.jpg');
+    background-position: center;
+    background-size: auto;
+    
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    display: flex;
+    backdrop-filter: blur(10px);
+}
+
+.flex-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.bottom-container {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.search-container {
+    border-radius: $border-radius;
+    background-color: $color3;
+
+    margin-top: 3em;
+    max-width: 40em;
+    flex: 1
+}

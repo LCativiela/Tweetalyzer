@@ -12,7 +12,7 @@ class TweetRow extends Component {
   
       return (
         <div>
-            <p>Tweet Table {this.props.data &&this.props.data.text}</p>
+            <p>{this.props.data && this.props.data.text}</p>
         </div>
       );
     }
