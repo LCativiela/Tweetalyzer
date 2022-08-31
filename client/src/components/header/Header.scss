@@ -3,16 +3,14 @@
 .header{
     position:sticky;
     width: 100%;
-    height: 7rem;
+    height: 10rem;
 
     
-    background-image: url('/resources/header3.jpg');
+    background-color: $color7;
     background-position: center;
     background-size: auto;
     
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    border-bottom-left-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     display: flex;
     backdrop-filter: blur(10px);
 }
@@ -21,16 +19,30 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-
 }
 
 
+
 .bottom_container {
+
+    flex: 2;
     display: flex;
+
 
     align-items: center;
     justify-content: center;
     
+}
+
+.top_container{
+    flex: 1;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top_container div{
+    flex: 1;
 }
 
 .search_container {
@@ -42,3 +54,39 @@
     max-width: 40em;
     flex: 1
 }
+
+.logo{display:block;
+    transform: translateY(10px);
+    margin-left: 2em;
+    width: 75px;
+}
+
+.github{
+    
+    width: 40px;
+}
+
+h1{
+    text-align: center;
+}
+
+.title h1{
+
+    font-family: 'Courier New', Courier, monospace;
+    color: $color1;
+    font-size: 2.5em;
+    text-shadow: 1.5px 1px 0px rgba(0,0,0,0.2);
+}
+
+.github-container{
+    float: right;
+    margin-right: 10px;
+
+}
+p p{
+    color: $white;
+    transform: translateY(10px);
+}
+
+
+

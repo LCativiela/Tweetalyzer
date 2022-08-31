@@ -54,7 +54,6 @@ async function parse(hashtag,raw){
 
     
     data.tweetList = tweetList
-    console.log(tweetList)
     if(tweetList.length==0){
         data.empty = true
     } else{

@@ -5,6 +5,7 @@ import RouteSwitch from './RouteSwitch';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+document.title="Tweetalyzer"
 root.render(
   <div className='index'>
     <RouteSwitch />

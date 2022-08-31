@@ -6,7 +6,7 @@ function App() {
     
     <div>
         <h1 style={{textAlign: "center"}}>This hashtag has no mentions, try with another!</h1>
-        <img width= "100%" src="https://thumbs.dreamstime.com/z/sad-pug-dog-rain-sitting-168599983.jpg" alt=""/>
+        <img width= "100%"  src="https://thumbs.dreamstime.com/z/sad-pug-dog-rain-sitting-168599983.jpg" alt=""/>
     </div>
   );
 }

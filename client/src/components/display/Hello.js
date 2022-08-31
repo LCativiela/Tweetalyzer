@@ -1,5 +1,6 @@
 import React from "react";
 import './Hello.scss'
+import Banner from '../../resources/twitterBanner.jpg'
 
 function App() {
   return (
@@ -15,8 +16,10 @@ function App() {
               This way, you can understand common trends, niches,
               and shared interests. Feel free to explore!
             </p>
-            <img src="../resources/header.png" alt=""></img>
 
+          </div>
+          <div className="image-container">
+            <img src={Banner} alt="" />
           </div>
         </div>
         
