@@ -1,28 +1,27 @@
 import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
+import { Divider } from '@mui/material';
 
 import './DataTable.scss';
 
 const columns = [
-  { field: 'photo', headerName: '', width: 70 },
-  { field: 'userName', headerName: 'User', width: 130 },
-  { field: 'text', headerName: 'Tweet', width: 1600 },
   {
-    field: 'fullName',
-    headerName: 'Full name',
-    description: 'This column has a value getter and is not sortable.',
-    sortable: false,
-    width: 160,
-    valueGetter: (params) =>
-      `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+    field: 'photo',
+    headerName: '',
+    width: 75,
+    renderCell: (params) => <img className='avatar' src={params.value} alt=''/>, // renderCell will render the component
   },
+  { field: 'userName', headerName: 'User', width: 130 },
+  { field: 'text', headerName: 'Tweet', width: 1100 },
 ];
 
 export default function DataTable(props) {
-    console.log(props.data)
 
   return (
-    <div style={{ height: 400, width: '100%' }}>
+    <div className='table' style={{ height: '25em', width: '80%' }}>
+      <h2>Tweet List</h2>
+      <Divider variant="middle" />
+      
       <DataGrid
         rows={props.data}
         columns={columns}

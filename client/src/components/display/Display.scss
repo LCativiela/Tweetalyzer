@@ -1,4 +1,33 @@
 @import '/src/variables';
-.display-div {
-    margin-top:  $margin-top;
+.display_div {
+    display: flex;
+    flex-direction: column;
+    margin-top:  3em;
+}
+
+.top_div {
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.bottom_div{
+    padding-top: 4em;
+    padding-bottom: 4em;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.tag_cloud{
+
+    margin-top: 30px;
+    width: 80%;
+}
+.table_div{
+    
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }

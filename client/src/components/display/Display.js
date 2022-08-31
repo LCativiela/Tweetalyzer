@@ -3,6 +3,8 @@
 import React, { Component } from "react";
 import DataTable from "./tweetTable/DataTable";
 import Spinner from './Spinner';
+import TagCloud from './tagCloud/TagCloud';
+import EmptyQuery from './EmptyQuery'
 
 import './Display.scss';
 
@@ -30,14 +32,25 @@ class Display extends Component {
   
   
     render() {
-
+      console.log(this.state.data)
       return (
-        <div className="display-div">
-            {this.state.isLoading && !this.state.isError && <Spinner />}
-            {!this.state.isLoading && <DataTable data={this.state.data.tweetList}/>}
-            {!this.state.isLoading && <div/>}
-            {/*!this.state.isLoading && <TweetTable data={this.state.data.tweetList}/>*/}
-            {this.state.isError  && <p>Error</p>}
+        <div className="display_div">
+            <div className="top_div">
+              {!this.state.data.empty && !this.state.isLoading 
+                && <DataTable data={this.state.data.tweetList}/>}
+              {this.state.data.empty  && !this.state.isLoading 
+                && <EmptyQuery/>}
+             
+              {this.state.isError  && <p>Error</p>}
+              {this.state.isLoading && !this.state.isError && <Spinner />}
+              
+            </div>
+            <div className="bottom_div">
+              <div className="tag_cloud">
+               {!this.state.data.empty && !this.state.isLoading 
+                && <TagCloud data={this.state.data.hashtags}/>}
+              </div>
+            </div>            
         </div>
       );
     }

@@ -1,9 +1,8 @@
 import React from 'react';
-
+import { CircularProgress } from '@mui/material';
 const Spinner = () => (
     <div className = "spinner">
-        
-        <p>Loading tweets...</p>
+        <CircularProgress />
     </div>
     
 );

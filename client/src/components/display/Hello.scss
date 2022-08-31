@@ -1,0 +1,31 @@
+@import '/src/variables';
+.hello{
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+}
+.hello-container{
+
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 80%;
+
+}
+.hello-half{
+    width: 100%;
+}
+h1{
+    color: $color6;
+    text-align: center;
+}
+p{
+    color: $color6;
+    text-align: center;
+}
+.top-container{
+    margin-left: 10px;
+    display: flex;
+    color: rgb(39, 38, 38);
+}

@@ -27,7 +27,7 @@ async function parse(hashtag,raw){
     let tweetList = []
     let hashtags = {}
 
-
+    //Get info from tweet
     for(var i in raw['statuses']){
         for( let j in raw['statuses'][i].entities.hashtags){
             let element = raw['statuses'][i].entities.hashtags[j].text
@@ -51,9 +51,30 @@ async function parse(hashtag,raw){
         }
         tweetList.push(tweet)
     }
+
+    
     data.tweetList = tweetList
-    data.hashtags = hashtags
+    console.log(tweetList)
+    if(tweetList.length==0){
+        data.empty = true
+    } else{
+        data.empty = false
+    }
+    data.hashtags = hashtagObject(hashtags)
     return data
+}
+
+//generate hashtag object for tag map
+function hashtagObject(hashtags){
+    const list = []
+    for(let term of Object.keys(hashtags)){
+        let object = {
+            text: term,
+            value: hashtags[term]
+        }
+        list.push(object)
+    }
+    return list
 }
 
 module.exports =  dataParser; 
